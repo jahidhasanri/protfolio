@@ -30,7 +30,7 @@ const Navbar = () => {
             {["About", "Skills", "Projects", "Contact"].map((item, index) => (
               <Link
                 key={index}
-                to={item.toLowerCase()}
+                to={item.toLowerCase() === "about" ? "about-me" : item.toLowerCase()}
                 smooth={true}
                 duration={500}
                 className="cursor-pointer hover:text-yellow-400 transition duration-300"
@@ -90,7 +90,7 @@ const Navbar = () => {
           {["About", "Skills", "Projects", "Contact"].map((item, index) => (
             <Link
               key={index}
-              to={item.toLowerCase()}
+              to={item.toLowerCase() === "about" ? "about-me" : item.toLowerCase()}
               smooth={true}
               duration={500}
               className="block px-4 py-2 text-sm hover:bg-gray-600 hover:text-yellow-400 cursor-pointer transition duration-300"

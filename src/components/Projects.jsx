@@ -11,8 +11,8 @@ const projects = [
     liveLink: "https://fluffy-manatee-71fb16.netlify.app/",
     clientGithubLink: "https://github.com/programming-hero-web-course1/b10-a9-authentication-jahidhasanri",
     serverGithubLink: '',
-    challenges: "Some of the challenges faced in this project include...",
-    improvements: "Future improvements I plan to make in this project are..."
+    challenges: "Some challenges faced in this project include integrating authentication features, ensuring data security, and managing state for personalized recommendations. Debugging asynchronous issues and optimizing performance were also key challenges.",
+    improvements: "Future improvements I plan to make in this project include adding advanced AI-driven recommendations, implementing a more detailed user feedback system, and enhancing the mobile responsiveness for a better user experience."
   },
   {
     id: 2,
@@ -23,8 +23,8 @@ const projects = [
     liveLink: "https://assignment-10-solution.web.app/",
     clientGithubLink: "https://github.com/programming-hero-web-course2/b10-a10-client-side-jahidhasanri",
     serverGithubLink: "https://github.com/programming-hero-web-course2/b10-a10-server-side-jahidhasanri",
-    challenges: "Challenges faced in project 2...",
-    improvements: "Improvement plans for this project..."
+    challenges: "One of the biggest challenges was implementing a smooth checkout process and managing product stock with real-time updates. Handling the responsiveness of the site across devices also posed some difficulties.",
+    improvements: "Future improvements include adding user reviews, integrating payment systems like Stripe, and implementing a recommendation engine based on user preferences and past purchases."
   },
   {
     id: 3,
@@ -35,10 +35,11 @@ const projects = [
     liveLink: "https://assignment-11-soution.web.app/",
     clientGithubLink: "https://github.com/programming-hero-web-course2/b10a11-client-side-jahidhasanri?tab=readme-ov-file",
     serverGithubLink: "https://github.com/programming-hero-web-course2/b10a11-server-side-jahidhasanri",
-    challenges: "Challenges encountered during development...",
-    improvements: "Planned future enhancements for the project..."
+    challenges: "Challenges included implementing real-time updates of the menu and managing the booking system efficiently. The integration of Firebase for real-time data handling and working with large amounts of user input also posed challenges.",
+    improvements: "Plans for future enhancements include adding a detailed inventory management system, improving the reservation process with a calendar view, and introducing a loyalty program for customers."
   }
 ];
+
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
