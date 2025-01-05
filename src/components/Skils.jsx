@@ -2,7 +2,7 @@ import React from 'react';
 
 const Skills = () => {
   return (
-    <section className="bg-gray-100 py-12">
+    <section id="skills" className="bg-gray-100 py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-semibold text-gray-800 mb-8 text-center">My Skills</h2>
 

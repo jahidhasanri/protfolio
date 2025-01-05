@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-scroll";
+import { Link } from "react-scroll"; // import react-scroll Link
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -42,9 +42,11 @@ const Navbar = () => {
 
           {/* Download Resume Button */}
           <div className="hidden md:block">
-            <button className="bg-yellow-500 text-gray-800 px-4 py-2 rounded-md shadow-md hover:bg-yellow-600 hover:text-white transition duration-300">
-              Download Resume
-            </button>
+            <a href="/portfolio.pdf" download="Jahid_Hasan_Rifat_Resume.pdf">
+              <button className="bg-yellow-500 text-gray-800 px-4 py-2 rounded-md shadow-md hover:bg-yellow-600 hover:text-white transition duration-300">
+                Download Resume
+              </button>
+            </a>
           </div>
 
           {/* Hamburger menu */}
@@ -98,9 +100,11 @@ const Navbar = () => {
             </Link>
           ))}
           <div className="px-4 py-2">
-            <button className="w-full bg-yellow-500 text-gray-800 px-4 py-2 rounded-md shadow-md hover:bg-yellow-600 hover:text-white transition duration-300">
-              Download Resume
-            </button>
+            <a href="/portfolio.pdf" download="Jahid_Hasan_Rifat_Resume.pdf">
+              <button className="w-[200px] bg-yellow-500 text-gray-800 px-4 py-2 rounded-md shadow-md hover:bg-yellow-600 hover:text-white transition duration-300">
+                Download Resume
+              </button>
+            </a>
           </div>
         </div>
       )}
