@@ -1,110 +1,104 @@
-import React, { useState } from 'react';
-
-// Sample data for projects
-const projects = [
-  {
-    id: 1,
-    name: "Career Counseling",
-    image: "https://i.ibb.co/zhQ7zrp/Screenshot-2025-01-05-142847.png",
-    description: "This project is a Career Counseling website designed to provide personalized career advice, guidance, and resources to users. It offers a user-friendly platform where individuals can access various counseling services to make informed decisions about their career paths.",
-    techStack: "React, Node.js, MongoDB",
-    liveLink: "https://fluffy-manatee-71fb16.netlify.app/",
-    clientGithubLink: "https://github.com/programming-hero-web-course1/b10-a9-authentication-jahidhasanri",
-    serverGithubLink: '',
-    challenges: "Some challenges faced in this project include integrating authentication features, ensuring data security, and managing state for personalized recommendations. Debugging asynchronous issues and optimizing performance were also key challenges.",
-    improvements: "Future improvements I plan to make in this project include adding advanced AI-driven recommendations, implementing a more detailed user feedback system, and enhancing the mobile responsiveness for a better user experience."
-  },
-  {
-    id: 2,
-    name: "A Sports Equipment Store",
-    image: "https://i.ibb.co/Ns5mnvn/Screenshot-2025-01-05-143619.png",
-    description: "EquiSports is a modern, responsive e-commerce platform for purchasing and managing sports equipment. Designed with simplicity and user experience in mind, it caters to sports enthusiasts looking for a seamless online shopping experience.",
-    techStack: "HTML, CSS, JavaScript",
-    liveLink: "https://assignment-10-solution.web.app/",
-    clientGithubLink: "https://github.com/programming-hero-web-course2/b10-a10-client-side-jahidhasanri",
-    serverGithubLink: "https://github.com/programming-hero-web-course2/b10-a10-server-side-jahidhasanri",
-    challenges: "One of the biggest challenges was implementing a smooth checkout process and managing product stock with real-time updates. Handling the responsiveness of the site across devices also posed some difficulties.",
-    improvements: "Future improvements include adding user reviews, integrating payment systems like Stripe, and implementing a recommendation engine based on user preferences and past purchases."
-  },
-  {
-    id: 3,
-    name: "Restaurant Management",
-    image: "https://i.ibb.co/fxCKtNC/Screenshot-2025-01-05-144022.png",
-    description: "This project is a full-stack Restaurant Management website aimed at enhancing the restaurant's online presence, improving customer interaction, and streamlining internal management processes. It is built using the MERN stack (MongoDB, Express.js, React.js, and Node.js) to ensure a modern, robust, and user-friendly experience.",
-    techStack: "Vue.js, Firebase",
-    liveLink: "https://assignment-11-soution.web.app/",
-    clientGithubLink: "https://github.com/programming-hero-web-course2/b10a11-client-side-jahidhasanri?tab=readme-ov-file",
-    serverGithubLink: "https://github.com/programming-hero-web-course2/b10a11-server-side-jahidhasanri",
-    challenges: "Challenges included implementing real-time updates of the menu and managing the booking system efficiently. The integration of Firebase for real-time data handling and working with large amounts of user input also posed challenges.",
-    improvements: "Plans for future enhancements include adding a detailed inventory management system, improving the reservation process with a calendar view, and introducing a loyalty program for customers."
-  }
-];
-
+import React, { useState, useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 const Projects = () => {
-  const [selectedProject, setSelectedProject] = useState(null);
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
 
-  const handleViewMore = (project) => {
-    setSelectedProject(project);
-  };
-
-  const handleCloseModal = () => {
-    setSelectedProject(null);
-  };
+  const projects = [
+    {
+      id: 1,
+      name: "Restaurant Management",
+      image: "https://i.ibb.co/62Qbh1r/Screenshot-2025-02-07-193107.png",
+      description: "This project is a full-stack Restaurant Management website aimed at enhancing the restaurant's online presence, improving customer interaction, and streamlining internal management processes. It is built using the MERN stack (MongoDB, Express.js, React.js, and Node.js) to ensure a modern, robust, and user-friendly experience.",
+      techStack: "React, Node.js, MongoDB, Firebase, Tailwind",
+      liveLink: "https://assignment-11-soution.web.app/",
+      clientGithubLink: "https://github.com/jahidhasanri/Resturent-Management",
+      serverGithubLink: "https://github.com/jahidhasanri/resturent-menagement-server",
+    },
+    {
+      id: 2,
+      name: "EquiSports",
+      image: "https://i.ibb.co/LzwNBYQq/Screenshot-2025-02-07-193154.png",
+      description: "EquiSports is a modern, responsive e-commerce platform for purchasing and managing sports equipment. Designed with simplicity and user experience in mind, it caters to sports enthusiasts looking for a seamless online shopping experience.",
+      techStack: "React, Node.js, MongoDB, Firebase, Tailwind",
+      liveLink: "https://assignment-10-solution.web.app/",
+      clientGithubLink: "https://github.com/jahidhasanri/assignment-10-solution-client",
+      serverGithubLink: "https://github.com/jahidhasanri/assignment-10-server",
+    },
+    {
+      id: 3,
+      name: "Career Counseling",
+      image: "https://i.ibb.co/W1WsW2q/Screenshot-2025-02-07-193223.png",
+      description: "This project is a Career Counseling website designed to provide personalized career advice, guidance, and resources to users. It offers a user-friendly platform where individuals can access various counseling services to make informed decisions about their career paths.",
+      techStack: "React, Firebase, Tailwind, CSS",
+      liveLink: "https://fluffy-manatee-71fb16.netlify.app/",
+      clientGithubLink: "https://github.com/programming-hero-web-course1/b10-a9-authentication-jahidhasanri",
+      serverGithubLink: "",
+    }
+  ];
 
   return (
-    <section className="bg-gray-100 py-12" id="projects">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-semibold text-gray-800 mb-8" id="projects-heading">Projects</h2>
+    <section className="py-12 px-4 sm:px-6 lg:px-8 bg-gray-900" id="projects">
+      <div className="max-w-7xl mx-auto">
+        <h2 className="text-4xl sm:text-5xl font-semibold text-purple-300 text-center mb-8">
+          Projects
+        </h2>
 
         {/* Project Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 gap-8">
           {projects.map((project) => (
-            <div key={project.id} id={`project-${project.id}`} className="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
-              <img src={project.image} alt={project.name} className="w-full h-48 object-cover" />
-              <div className="p-4 flex flex-col flex-grow">
-                <h3 className="text-xl font-semibold text-gray-800" id={`project-title-${project.id}`}>{project.name}</h3>
-                <p className="text-gray-600 mt-2 flex-grow" id={`project-description-${project.id}`}>{project.description}</p>
-                <button
-                  onClick={() => handleViewMore(project)}
-                  className="mt-4 bg-yellow-500 text-white py-2 px-4 rounded-md hover:bg-yellow-600 transition duration-300"
-                  id={`view-more-button-${project.id}`}
-                >
-                  View More
-                </button>
+            <div
+              key={project.id}
+              className="p-6 border rounded-lg shadow-lg overflow-hidden bg-gray-800 lg:flex lg:items-start gap-8"
+              data-aos="fade-up"
+            >
+              {/* Image Section */}
+              <div className="w-full lg:w-[500px] h-auto flex items-center justify-center bg-gray-900 rounded-lg overflow-hidden">
+                <img src={project.image} alt={project.name} className="w-full h-auto object-cover" />
+              </div>
+
+              {/* Content Section */}
+              <div className="w-full lg:flex-1 text-center lg:text-left">
+                <h2 className="text-pink-500 text-2xl sm:text-3xl font-semibold">{project.name}</h2>
+                <p className="text-gray-300 mt-3 text-lg">{project.description}</p>
+
+                {/* Links */}
+                <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mt-4">
+                  <Link to={project.clientGithubLink} className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition">
+                    Client Code
+                  </Link>
+                  {project.serverGithubLink && (
+                    <Link to={project.serverGithubLink} className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition">
+                      Server Code
+                    </Link>
+                  )}
+                  <Link to={project.liveLink} className="px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600 transition">
+                    Live Demo
+                  </Link>
+                </div>
+
+                {/* Tech Stack */}
+                <div className="mt-4 flex flex-wrap justify-center lg:justify-start gap-2">
+                  {project.techStack.split(", ").map((tec, index) => (
+                    <motion.button
+                      key={index}
+                      className="px-3 py-1 bg-gray-700 text-white rounded-md text-sm"
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.9 }}
+                    >
+                      {tec}
+                    </motion.button>
+                  ))}
+                </div>
               </div>
             </div>
           ))}
         </div>
-
-        {/* Modal for Project Details */}
-        {selectedProject && (
-          <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50" id="project-modal">
-            <div className="bg-white p-8 rounded-lg shadow-lg max-w-3xl w-full">
-              <h3 className="text-2xl font-semibold text-gray-800 mb-4" id="modal-title">{selectedProject.name}</h3>
-              <p className="text-gray-600 mb-4" id="modal-description">{selectedProject.description}</p>
-              <p className="font-semibold text-gray-800">Tech Stack: {selectedProject.techStack}</p>
-              <div className="mt-4">
-                <p><strong>Challenges Faced:</strong> {selectedProject.challenges}</p>
-                <p><strong>Future Improvements:</strong> {selectedProject.improvements}</p>
-              </div>
-              <div className="mt-4">
-                <p><strong>Live Link:</strong> <a href={selectedProject.liveLink} target="_blank" className="text-blue-500 hover:underline" id="modal-live-link">{selectedProject.liveLink}</a></p>
-                <p><strong>GitHub Link (client):</strong> <a href={selectedProject.clientGithubLink} target="_blank" className="text-blue-500 hover:underline" id="modal-client-github-link">{selectedProject.clientGithubLink}</a></p>
-                {selectedProject.serverGithubLink && (
-                  <p><strong>GitHub Link (server):</strong> <a href={selectedProject.serverGithubLink} target="_blank" className="text-blue-500 hover:underline" id="modal-server-github-link">{selectedProject.serverGithubLink}</a></p>
-                )}
-              </div>
-              <button
-                onClick={handleCloseModal}
-                className="mt-4 bg-gray-500 text-white py-2 px-4 rounded-md hover:bg-gray-600"
-                id="close-modal-button"
-              >
-                Close
-              </button>
-            </div>
-          </div>
-        )}
       </div>
     </section>
   );

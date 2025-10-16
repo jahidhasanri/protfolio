@@ -1,16 +1,17 @@
 import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
 import { Link } from "react-scroll"; // import react-scroll Link
-
+import '../Home/navbar.css'
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-gradient-to-r from-gray-800 via-gray-700 to-gray-800 text-white fixed w-full z-10 shadow-lg">
+    <nav className="bg-gradient-to-r p-1 from-gray-800 via-gray-700 to-gray-800 text-white fixed w-full z-10 shadow-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            <Link
+            <div
               to="home"
               smooth={true}
               duration={500}
@@ -22,7 +23,7 @@ const Navbar = () => {
                 alt="Logo"
               />
               <span className="text-xl font-semibold ml-2">My Portfolio</span>
-            </Link>
+            </div>
           </div>
 
           {/* Menu items */}
@@ -42,7 +43,7 @@ const Navbar = () => {
 
           {/* Download Resume Button */}
           <div className="hidden md:block">
-            <a href="/portfolio.pdf" download="Jahid_Hasan_Rifat_Resume.pdf">
+            <a href="/resume_of_rifat.pdf" download="Jahid_Hasan_Rifat_Resume.pdf">
               <button className="bg-yellow-500 text-gray-800 px-4 py-2 rounded-md shadow-md hover:bg-yellow-600 hover:text-white transition duration-300">
                 Download Resume
               </button>

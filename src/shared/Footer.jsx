@@ -1,4 +1,5 @@
 import React from "react";
+import SocialLinks from "../components/Sociallinks";
 
 const Footer = () => {
   return (
@@ -58,42 +59,7 @@ const Footer = () => {
           {/* Social Links */}
           <div>
             <h3 className="text-lg font-semibold mb-4">Connect with Me</h3>
-            <div className="flex space-x-4">
-              <a
-                href="https://github.com/yourusername"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-yellow-400 transition duration-300"
-                aria-label="GitHub"
-              >
-                <i className="fab fa-github text-xl"></i>
-              </a>
-              <a
-                href="https://linkedin.com/in/yourusername"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-yellow-400 transition duration-300"
-                aria-label="LinkedIn"
-              >
-                <i className="fab fa-linkedin text-xl"></i>
-              </a>
-              <a
-                href="https://twitter.com/yourusername"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-yellow-400 transition duration-300"
-                aria-label="Twitter"
-              >
-                <i className="fab fa-twitter text-xl"></i>
-              </a>
-              <a
-                href="mailto:your-email@example.com"
-                className="text-gray-400 hover:text-yellow-400 transition duration-300"
-                aria-label="Email"
-              >
-                <i className="fas fa-envelope text-xl"></i>
-              </a>
-            </div>
+            <SocialLinks></SocialLinks>
           </div>
         </div>
 
